@@ -64,9 +64,9 @@ class Login extends React.Component {
             })
             .catch((err) => console.log(err.message));
 
-        this.election.deployed()
-            .then(instance => instance.closed())
-            .then(res => this.setState({ closed: res }))
+        // this.election.deployed()
+        //     .then(instance => instance.closed())
+        //     .then(res => this.setState({ closed: res }))
 
     }
 
