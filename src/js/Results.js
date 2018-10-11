@@ -24,8 +24,8 @@ class Results extends React.Component {
 
         this.election = TruffleContract(Election)
         this.election.setProvider(this.web3Provider)
-        this.election.defaults({from: this.web3.eth.accounts[1]});
-        this.web3.personal.unlockAccount(this.web3.eth.accounts[1],"testing", 15000); // todo wont work with close
+        this.election.defaults({from: this.web3.eth.accounts[0]});
+        this.web3.personal.unlockAccount(this.web3.eth.accounts[0],"testing", 15000); // todo wont work with close
     }
 
     handleClose = (event) => {

@@ -26,8 +26,8 @@ class CandidateList extends React.Component {
 
         this.election = TruffleContract(Election)
         this.election.setProvider(this.web3Provider)
-        this.election.defaults({from: this.web3.eth.accounts[1]});
-        this.web3.personal.unlockAccount(this.web3.eth.accounts[1],"testing", 15000);
+        this.election.defaults({from: this.web3.eth.accounts[0]});
+        this.web3.personal.unlockAccount(this.web3.eth.accounts[0],"testing", 15000);
 
         // this.web3.eth.defaultAccount = this.web3.eth.accounts[0];
         
@@ -46,6 +46,7 @@ class CandidateList extends React.Component {
         this.setState({ candidates: nextProps.candidates })
     }
 
+    // TODOs: Disable buttons(?)
     handleSubmit = (event) => {
         this.election.deployed()
         .then((instance) => {
